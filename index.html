@@ -19,26 +19,18 @@ _options:
     height: 1200
 ---
 
+<h3 class="editable">Tell your friends</h3>
+<div class="sharing">
+	{% assign share_url = page.url | absolute_url | cgi_escape %}
+	<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}">{% include icons/social-icon.html icon="Facebook" %}</a>
+	<a class="twitter" href="https://twitter.com/intent/tweet?url={{ share_url }}&amp;text=I'm%20going%20to%20this%20event!">{% include icons/social-icon.html icon="Twitter" %}</a>
+	<a class="google-plus" href="https://plus.google.com/share?url={{ share_url }}">{% include icons/social-icon.html icon="Google Plus" %}</a>
+	<a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ share_url }}">{% include icons/social-icon.html icon="LinkedIn" %}</a>
+	<a class="email" href="mailto:?subject=I'm going to this event&amp;body=Check%20it%20out%20-%20{{ share_url }}">{% include icons/social-icon.html icon="Email" %}</a>
+</div>
 
+<h3 class="editable">Location</h3>
+<div class="map" id="gmap_canvas"></div>
+<address><a href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{% include icons/place.svg %} {{ page.map.address }}</a></address>
 
-<script type="text/javascript">
-	window.mapData = {{ page.map | jsonify }};
-
-	function initMap() {
-		var myOptions = {
-			styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#d0e3b4"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#bde6ab"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe15f"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efd151"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#cfb2db"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]}],
-			zoom: window.mapData.zoom,
-			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
-		};
-		var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-		var marker = new google.maps.Marker({
-			map: map,
-			position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
-		});
-
-		google.maps.event.addDomListener(window, "resize", function () {
-			map.setCenter(myOptions.center);
-		});
-	}
-</script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>
