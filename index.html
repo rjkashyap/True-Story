@@ -1,22 +1,6 @@
 ---
 title: Young People's Fellowship Dinner
-start_datetime: 2016-11-10 9:00:00
-end_datetime: 2016-11-10 18:00:00
-timezone: America/Los_Angeles
-description: A fun filled day with friends and beer.
 background_image: /uploads/2015/12.jpeg
-map:
-  address: 1 Market Street, San Francisco
-  zoom: 16
-  latitude: 37.7938462
-  longitude: -122.3970253
-_options:
-  label_image:
-    width: 400
-    height: 400
-  image:
-    width: 600
-    height: 1200
 ---
 
 <div class="container">
@@ -43,14 +27,14 @@ _options:
 				<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRf0KYM1b5tYSU8a3k7zOQmyW70MFobHcVaKFqr-iSuKXez0gQiKNSsDsEqPqzbNkydeQsDnZibDgUl/pubhtml?gid=776665746&amp;single=true&amp;widget=true&amp;headers=false" width="100%"></iframe>  
 				
 				<div>
-				<h4>How to get there</h4>				
-				<h5>The Intersection, 156 Blockhouse Bay Rd &nbsp; &nbsp; &#40;adjacent to the Avondale Fire Station&#41; </h5>
+				<h3>How to get there</h3>				
 				</div>
 				<div class="mapouter"><div class="gmap_canvas"><iframe width=100% height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=156%20Blockhouse%20Bay%20Rd%2C%20Avondale&t=&z=13&ie=UTF8&iwloc=&output=embed"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:350px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:350px;width:100%;}</style></div>
             </div>
           </div>
         </div>
       </div>
+	  </div>
 
 <h3 class="editable">Tell your friends</h3>
 <div class="sharing">
@@ -59,8 +43,4 @@ _options:
 	<a class="email" href="mailto:?subject=I'm going to this event&amp;body=Check%20it%20out%20-%20{{ share_url }}">{% include icons/social-icon.html icon="Email" %}</a>
 </div>
 
-<h3 class="editable">Location</h3>
-<div class="map" id="gmap_canvas"></div>
-<address><a href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{% include icons/place.svg %} {{ page.map.address }}</a></address>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>
