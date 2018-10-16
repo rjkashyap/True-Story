@@ -1,8 +1,8 @@
 # ----
 # Site
 
-title: Malt Template
-url: "https://whispering-boat.cloudvent.net"
+title: YPFD
+url: "https://ypdf.cf"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
@@ -17,9 +17,9 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Malt Template
+  name: YPFD
   links:
-    - https://github.com/CloudCannon/malt-jekyll-template
+    - 
 
 # -----
 # Build
