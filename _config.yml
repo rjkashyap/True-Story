@@ -1,8 +1,8 @@
 # ----
 # Site
 
-title: YPFD
-url: "https://ypdf.cf"
+title: True Story Time
+url: "https://truestory.org.nz"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
@@ -17,7 +17,7 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: YPFD
+  name: True Story Time
   links:
     - 
 
